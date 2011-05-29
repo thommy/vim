@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/private/tmp/spf13-vim'
+let g:netrw_dirhist_2='/private/tmp/spf13-vim/.vim'
+let g:netrw_dirhist_3='/users/thom/Documents/UNI/HET551-Design-Development-Project/ezyroute/.git'
+let g:netrw_dirhist_4='/users/thom/Documents/UNI/HET551-Design-Development-Project/ezyroute/doc/preliminary-design'

@@ -1,0 +1,8 @@
+*bundles* *bundles.txt*            Installed Bundles
+
+
+Last updated by vim-update-bundles on Mon May 16 21:09:38 +1000 2011.
+
+  PLUGIN                           VERSION                RELEASE DATE
+------------------------------------------------------------------------
+  |snipmate.vim|                   f5a75d075d3c0          2010-04-08

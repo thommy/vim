@@ -242,4 +242,6 @@ endfunction
 
 autocmd BufWritePre *.py,*.js,*.c,*,cpp,*.c++,*,hpp,*.hpp :call <SID>StripTrailingWhitespaces()
 
+" This is a comment
+
 

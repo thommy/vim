@@ -1,9 +1,25 @@
-filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+set nocompatible              " be iMproved, required
+filetype off                  " requiredset rtp+=~/.vim/bundle/Vundle.vim
 
-set nospell
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"   							   Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'git://github.com/tpope/vim-vividchalk.git'
+"Plugin 'wincent/command-t'
+Plugin 'KnoP-01/krl-for-vim'
+Plugin 'tpope/vim-fugitive'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 " Set the tabspace width
 set ts=4
@@ -43,21 +59,23 @@ vno v <esc>
 
 nmap <silent> <C-D> :NERDTreeToggle<CR>
 
-" set guioptions-=m " turn off menu bar
-" set guioptions-=T " turn off toolbar
-" set guioptions-=M " does not run the menubar script
-" set guioptions-=r " removes the right-hand scroll bar
-" set guioptions-=R " removes the right-hand scroll bar
-" set guioptions-=l " removes the left-hand scroll bar
-" set guioptions-=L " removes the left-hand scroll bar
+nmap oo o<ESC>
+nmap OO O<ESC>
 
-" Dictionary word autocomplete with <C-N>
-"set dictionary-=/usr/share/dict/words dictionary+=/usr/share/dict/words
+set guioptions-=m " turn off menu bar
+set guioptions-=T " turn off toolbar
+set guioptions-=M " does not run the menubar script
+set guioptions-=r " removes the right-hand scroll bar
+set guioptions-=R " removes the right-hand scroll bar
+set guioptions-=l " removes the left-hand scroll bar
+set guioptions-=L " removes the left-hand scroll bar
 
 " Used for man pages
 let pager=''
 
-colorscheme neverland_select
+let mapleader=","
+
+colorscheme vividchalk
 
 set directory=~/.vim/swap,.
 
@@ -158,71 +176,6 @@ set synmaxcol=2048
 " Add ignorance of whitespace to diff
 " set diffopt+=iwhite
 
-noremap   <Up>    ""
-noremap!  <Up>    <Esc>
-noremap   <Down>  ""
-noremap!  <Down>  <Esc>
-noremap   <Left>  ""
-noremap!  <Left>  <Esc>
-noremap   <Right> ""
-noremap!  <Right> <Esc>
-
-" Let Mathematica be the default
-let filetype_m="mma"
-
-" The beast following is something i didn't write... it will return the
-" syntax highlighting group that the current "thing" under the cursor
-" belongs to -- very useful for figuring out what to change as far as
-" syntax highlighting goes.
-" nmap <silent> <Esc> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name")
-"      \ . '> trans<' . synIDattr(synID(line("."),col("."),0),"name")
-"      \ . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name")
-"      \ . ">"<CR>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"   							   LaTeX Settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" IMPORTANT: grep will sometimes skip displaying the file name if you
-" search in a singe file. This will confuse Latex-Suite. Set your grep
-" program to always generate a file-name.
-set grepprg=grep\ -nH\ $*
-
-" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
-" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
-" The following changes the default filetype back to 'tex':
-let g:tex_flavor='latex'
-
-" TIP: if you write your \label's as \label{fig:something}, then if you
-" type in \ref{fig: and press <C-n> you will automatically cycle through
-" all the figure labels. Very useful!
-set iskeyword+=:
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"   							   Plugins
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" git://github.com/astashov/vim-ruby-debugger.git",
-" BUNDLE: git://github.com/msanders/snipmate.vim.git
-" BUNDLE: git://github.com/scrooloose/nerdtree.git
-" git://github.com/timcharper/textile.vim.git
-" git://github.com/tpope/vim-cucumber.git
-" git://github.com/tpope/vim-fugitive.git
-" git://github.com/tpope/vim-git.git
-" git://github.com/tpope/vim-haml.git
-" git://github.com/tpope/vim-markdown.git
-" git://github.com/tpope/vim-rails.git
-" BUNDLE: git://github.com/tpope/vim-repeat.git
-" BUNDLE: git://github.com/tpope/vim-surround.git
-" git://github.com/tpope/vim-vividchalk.git
-" BUNDLE: git://github.com/tsaleh/vim-align.git
-" BUNDLE: git://github.com/godlygeek/tabular.git
-" git://github.com/tsaleh/vim-shoulda.git
-" BUNDLE: git://github.com/tsaleh/vim-supertab.git
-" BUNDLE: git://github.com/kevinw/pyflakes-vim.git
-" git://github.com/tsaleh/vim-tcomment.git
-" git://github.com/vim-ruby/vim-ruby.git
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "   							   Functions
